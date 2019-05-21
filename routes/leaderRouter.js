@@ -7,9 +7,6 @@ const leaderRouter = express.Router();
 
 leaderRouter.use(bodyParser.json());
 
-
-
-
 leaderRouter.route('/')
 .get((req,res,next) => {
 	Leaders.find({})

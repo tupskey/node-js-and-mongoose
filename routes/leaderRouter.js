@@ -32,7 +32,7 @@ leaderRouter.route('/')
 	res.statusCode = 403;
 	res.end('Put is not supported on /leaders')
 })
-.delete(authenticate.verifyUser,(req,res,next) => {
+.delete(authenticate.verifyUser,authenticate.verifyAdmin, (req,res,next) => {
 	Leaders.remove({})
 	.then((resp) => {
 		res.statusCode = 200;

@@ -25,7 +25,9 @@ const Promotions = require('./models/promotions');
 const Leaders = require('./models/leaders');
 
 const url  = config.mongoUrl;
-const connect = mongoose.connect(url);
+const connect = mongoose.connect(url, {
+	useMongoclient: true
+});
 
 connect.then((db) => {
 	console.log('Connected to the Server');

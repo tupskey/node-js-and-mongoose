@@ -32,6 +32,7 @@ exports.jwtPassport = passport.use(new JwtStrategy(opts,
 		 		return done(err, false);
 		 	}
 		 	else if (user) {
+		 		console.log(user, 'user')
 		 		return done(null, user);
 		 	}
 		 	else{
